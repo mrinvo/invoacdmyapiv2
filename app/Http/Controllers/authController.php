@@ -83,7 +83,7 @@ class authController extends Controller
             'message' => 'logged in successfuly',
             'data' => $user,
             'token' => $token,
-            'permission' => $permissions,
+            'permission' => $permissions->pluck('name'),
 
         ];
 

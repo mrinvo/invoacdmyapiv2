@@ -85,5 +85,31 @@ class categoryController extends Controller
         return response($response,201);
 
     }
+
+    public function haschilds($id){
+
+        $childs = Category::where('parent_id',$id)->get;
+
+        if(isset($childs)){
+            $has = true;
+            $count = count($childs);
+            $msg = 'this parent has ' . $count . 'childs';
+        }else{
+            $has = false;
+            $count = 0;
+            $msg = 'this category has no childs';
+            $childs = [];
+        }
+
+        $response = [
+            'message' => $msg,
+            'has childs' => $has,
+            'number of childs' => $count,
+            'data' => $childs,
+
+        ];
+        return response($response,201);
+
+    }
     //
 }

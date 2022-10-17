@@ -16,6 +16,7 @@ class exam extends Model
         'year',
         'status',
         'category_id',
-        'user_id'
+        'user_id',
+        'have_sections'
     ];
 }

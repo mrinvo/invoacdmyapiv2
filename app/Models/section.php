@@ -14,6 +14,7 @@ class section extends Model
         'type',
         'exam_id',
         'user_id',
+        'active'
 
 
     ];

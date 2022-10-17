@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('month')->nullable();
             $table->string('year')->nullable();
             $table->string('status');
-
+            $table->boolean('have_sections');
             $table->foreignId('user_id')->constrained('users');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

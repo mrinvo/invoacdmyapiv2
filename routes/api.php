@@ -31,6 +31,7 @@ Route::group(['middleware' => ['lang']] , function () {
         Route::get('/category','index');
         Route::get('/category/{id}','show');
         Route::get('/category/childs/{id}','childs');
+        Route::get('/category/haschilds/{id}','haschilds');
 
 
     });

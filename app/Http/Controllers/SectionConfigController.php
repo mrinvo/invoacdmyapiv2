@@ -29,13 +29,13 @@ class SectionConfigController extends Controller
 
     public function show($id){
 
-        $config = section_config::where('exam_id',$id);
+        $config = section_config::where('exam_id',$id)->get();
 
 
 
 
         $response = [
-            'message' => 'config created successfuly successfuly',
+            'message' => 'config fetched successfuly successfuly',
             'data' => $config,
 
         ];

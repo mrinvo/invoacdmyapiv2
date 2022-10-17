@@ -18,7 +18,7 @@ class ExamController extends Controller
 
 
         $response = [
-            'message' => 'category created successfuly successfuly',
+            'message' => 'exam created successfuly successfuly',
             'data' => $exam,
 
         ];

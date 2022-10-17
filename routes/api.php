@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\categoryController;
-use App\Http\Controllers\ExamConfigController;
+use App\Http\Controllers\SectionConfigController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\SectionController;
@@ -48,7 +48,8 @@ Route::group(['middleware' => ['lang']] , function () {
     Route::controller(SectionController::class)->group(function(){
 
         Route::post('/section/create','create');
-        Route::post('/section/show/{id}','show');
+        Route::get('/section/show/{id}','show');
+        Route::put('/section/type/{id}','type');
 
 
     });

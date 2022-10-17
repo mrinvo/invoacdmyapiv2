@@ -90,7 +90,7 @@ class categoryController extends Controller
 
         $childs = Category::where('parent_id',$id)->get();
 
-        if(isset($childs)){
+        if(!empty($childs)){
             $has = true;
             $count = count($childs);
             $msg = 'this parent has ' . $count . 'childs';

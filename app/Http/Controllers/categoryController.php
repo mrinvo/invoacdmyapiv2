@@ -88,7 +88,7 @@ class categoryController extends Controller
 
     public function haschilds($id){
 
-        $childs = Category::where('parent_id',$id)->get;
+        $childs = Category::where('parent_id',$id)->get();
 
         if(isset($childs)){
             $has = true;

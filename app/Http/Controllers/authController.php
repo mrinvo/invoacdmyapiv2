@@ -35,7 +35,9 @@ class authController extends Controller
 
 
         $user->attachRole('teacher');
+        if(isset($request->permissions)){
         $user->syncPermissions($request->permissions);
+        }
 
         $token = $user->createToken('myapptoken')->plainTextToken;
 

@@ -26,6 +26,10 @@ return [
         ],
         'teacher' => [
             'categories' => 'c,r,u,d',
+            'exams' => 'c,r,u,d',
+            'section_configs' => 'c,r,u,d',
+            'sections' => 'c,r,u,d',
+
         ]
     ],
 

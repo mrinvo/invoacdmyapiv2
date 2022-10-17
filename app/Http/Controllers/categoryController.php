@@ -29,11 +29,11 @@ class categoryController extends Controller
 
     public function index(Request $request){
 
-        $all_categories = Category::withTranslation()->get();
+        $all_categories = Category::where('parent_id',null)->withTranslation()->get();
         $new = $all_categories->makeHidden('translations');
 
         $response = [
-            'message' => 'all categories fetched  successfuly',
+            'message' => 'all parent categories fetched  successfuly',
             'data' => $new,
 
         ];
@@ -62,6 +62,27 @@ class categoryController extends Controller
         ];
         return response($response,201);
 
+
+    }
+
+    public function childs($id){
+
+        $childs = Category::where('parent_id',$id)->withTranslation()->get();
+        if(isset($childs)){
+            $childs->makeHidden('translations');
+            $msg = 'all childs fetched';
+        }else{
+            $msg = 'this id has no childs';
+            $childs = null;
+        }
+
+
+        $response = [
+            'message' => $msg,
+            'data' => $childs,
+
+        ];
+        return response($response,201);
 
     }
     //

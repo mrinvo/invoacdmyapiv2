@@ -29,7 +29,7 @@ class SectionConfigController extends Controller
 
     public function show($id){
 
-        $config = section_config::where('exam_id',$id)->get();
+        $config = section_config::where('section_id',$id)->get();
 
 
 

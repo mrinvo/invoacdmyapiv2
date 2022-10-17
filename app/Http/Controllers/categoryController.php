@@ -89,10 +89,11 @@ class categoryController extends Controller
     public function haschilds($id){
 
         $childs = Category::where('parent_id',$id)->get();
+        $count = count($childs);
 
-        if(!empty($childs)){
+        if($count > 0){
             $has = true;
-            $count = count($childs);
+
             $msg = 'this parent has ' . $count . 'childs';
         }else{
             $has = false;

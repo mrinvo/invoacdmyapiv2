@@ -17,6 +17,7 @@ class Category extends Model implements TranslatableContract
         'category_type',
         'country',
         'childrens_id',
+        'user_id'
 
     ];
 }
